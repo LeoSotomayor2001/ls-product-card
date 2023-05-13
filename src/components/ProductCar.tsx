@@ -4,7 +4,6 @@ import React,{createContext } from "react";
 import { InitialValues, Product, ProductCardHandlers, ProductContextProps, onChangeArgs } from '../interfaces/interfaces';
 import styles from "../styles/styles.module.css";
 
-
 export interface Props{
   product:Product;
   // children?:ReactElement | ReactElement[];
@@ -16,14 +15,11 @@ export interface Props{
   initialValues?:InitialValues;
 }
 
-
 export const ProductContext =createContext({} as ProductContextProps);
 
 const {Provider}= ProductContext;
 
-
 export const ProductCar = ({children,product,className,style,onChange,value,initialValues}:Props) => {
-
 
   const {counter,increaseBy,maxCount,isMaxCountReached,reset}= useProduct({onChange,product,value,initialValues});
 
@@ -51,4 +47,3 @@ export const ProductCar = ({children,product,className,style,onChange,value,init
    </Provider>
   )
 }
-
